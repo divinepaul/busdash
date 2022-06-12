@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;500;700&display=swap');
+
+/*font-family: 'Roboto', sans-serif;*/
+/*font-family: 'Poppins', sans-serif;*/
+/*font-family: 'Bai Jamjuree', sans-serif;*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*#118ab2*/
+/*#06D6A0*/
+/*#FFD166*/
+/*#ef476f*/
+/*#073B4C*/
+/*#211A1D*/
+
+html,body {
+    min-height: 100vh;
+}
+.top-nav {
+    height: 5%;
+    background: #6320EE;
+    width: 100%;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 0 30px;
+    align-items:center;
+}
+.top-nav-heading {
+    font-family: 'Poppins', sans-serif;
+}
+.top-nav-right a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 30px;
+    font-size: 17px;
+}
+
