@@ -33,7 +33,10 @@ html,body {
 }
 .top-nav-heading {
     font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: white;
 }
+
 .top-nav-right a {
     text-decoration: none;
     color: white;
@@ -41,4 +44,22 @@ html,body {
     margin-right: 30px;
     font-size: 17px;
 }
+main {
+    display: flex;
+    height: 95%;
+    width: 100%;
+}
+table {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+td,th {
+    padding: 10px;
+}
+th {
+    background: #6320EE; 
+    color: white;
+}
+tr:nth-child(even){background-color: #ffffff;}
+tr:nth-child(odd){background-color: #eeeeee;}
 

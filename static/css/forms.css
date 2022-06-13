@@ -33,3 +33,7 @@ form h1 {
     font-family: 'Poppins', sans-serif;
     margin-bottom: 50px;
 }
+.errors-list {
+    font-family: 'Roboto', sans-serif;
+    color:#ef476f;
+}

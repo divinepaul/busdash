@@ -1,5 +1,4 @@
 <?php
-require('random_functions.php');
 
 function check_csrf_or_error($csrf_token) {
     if(!isset($_SESSION['csrf_token'])){
@@ -14,6 +13,13 @@ function check_csrf_or_error($csrf_token) {
     return;
 }
 
-
-
+function check_if_input_emtpy(...$feild_names) {
+    $errors = array();
+    foreach($feild_names as $feild_name){
+        if(!isset($_POST[$feild_name]) || $_POST[$feild_name] == ""){
+            $errors[$feild_name] = "No value given.";
+        }
+    }
+    return $errors;
+}
 ?>

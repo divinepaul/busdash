@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 // store the token in the session
 if (!isset($_SESSION['csrf_token'])) {
     // TODO: unsafe ?? 
