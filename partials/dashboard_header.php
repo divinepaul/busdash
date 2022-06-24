@@ -26,7 +26,7 @@
 <main>
 
 <div class="sidebar">
-    <a href="/dashboard/users.php">
+    <a href="/dashboard/users/">
         <div class="sidebar-item">
             <i class="fa-solid fa-user"></i>
             Users

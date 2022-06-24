@@ -4,8 +4,8 @@ include("../config/all_config.php");
 include("../lib/all_lib.php");
 include("../partials/header.php"); 
 
+$errors = array();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $errors = array();
 
     check_csrf_or_error($_POST['csrf_token']);
     $errors = check_if_input_emtpy("email","password");
