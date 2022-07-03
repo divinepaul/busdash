@@ -4,13 +4,26 @@ include("../../config/all_config.php");
 include("../../lib/all_lib.php"); 
 check_auth_redirect_if_not();
 include("../../partials/dashboard_header.php"); 
-?>
 
-<h1> Add Users </h1>
+if(!isset($_GET['id'])){
+    redirect('/dashboard/users/');
+}
+if(empty($_GET['id'])){
+    redirect('/dashboard/users/');
+}
+if(!is_numeric($_GET['id'])){
+    redirect('/dashboard/users/');
+}
+
+$id = $_GET['id'];
+
+?>
+<h1> Edit </h1>
 <br>
 <br>
 
 <?php
+
 $name_input = new Input("name");
 $name_input->type = "text";
 $name_input->mysqli_type = "s";
@@ -39,6 +52,7 @@ $select_input->selectOptions = $select_values;
 
 $form = new Form($name_input,$email_input,$pass_input,$select_input);
 $form->sql_table = "users";
+$form->sql_id = $id;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if($form->validate()) {
@@ -47,10 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } 
 
 }
-
 $form->render();
 
 ?>
-
-
-
