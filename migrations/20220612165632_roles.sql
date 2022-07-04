@@ -8,4 +8,3 @@ CREATE TABLE roles (
 
 -- migrate:down
 DROP TABLE roles;
-

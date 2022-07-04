@@ -18,11 +18,11 @@
 CREATE TABLE `bus_stops` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `loc_lat` decimal(8,6) DEFAULT NULL CHECK (`loc_lat` is null or `loc_lat` >= -90 and `loc_lat` <= 90),
-  `loc_long` decimal(9,6) DEFAULT NULL CHECK (`loc_lat` is null or `loc_long` >= -180 and `loc_long` <= 180),
+  `loc_lat` float(8,6) DEFAULT NULL CHECK (`loc_lat` is null or `loc_lat` >= -90 and `loc_lat` <= 90),
+  `loc_long` float(9,6) DEFAULT NULL CHECK (`loc_lat` is null or `loc_long` >= -180 and `loc_long` <= 180),
   `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -59,14 +59,14 @@ CREATE TABLE `schema_migrations` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `role` (`role`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,5 +94,6 @@ INSERT INTO `schema_migrations` (version) VALUES
   ('20220612165731'),
   ('20220612170505'),
   ('20220612171028'),
-  ('20220613133955');
+  ('20220613133955'),
+  ('20220617142955');
 UNLOCK TABLES;

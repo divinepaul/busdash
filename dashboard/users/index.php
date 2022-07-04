@@ -12,12 +12,10 @@ $stmt->close();
 
 ?>
 
-<br>
-<br>
 <div style="display:flex;justify-content:space-between">
     <h1> Users </h1>
     <div>
-    <a class="link-button" href="/dashboard/users/add.php"><i class="fa-solid fa-pen"></i>Add User</a>
+    <a class="link-button" href="/dashboard/users/add.php"><i class="fa-solid fa-add"></i>Add User</a>
     </div>
 </div>
 <table>
@@ -38,6 +36,7 @@ foreach ($users as $user) {
     echo "<td>{$user['role']}</td>";
     echo "<td class=\"action-td\">
             <a class=\"icon-button\" href=\"/dashboard/users/edit.php?id={$user['id']}\"><i class=\"fa-solid fa-pen\"></i></a>
+            <a class=\"icon-button\" style=\"background: red\" href=\"/dashboard/users/delete.php?id={$user['id']}\"><i class=\"fa-solid fa-trash\"></i></a>
          </td>";
     echo "</tr>";
 }

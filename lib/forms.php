@@ -117,6 +117,7 @@ class Form {
                 $datatypes.="i";
                 $stmt->bind_param($datatypes, ...$values);
                 $stmt->execute();
+                $stmt->close();
             } else {
                 throw new Exception("sql_table is not set on the form");
             }
@@ -149,6 +150,7 @@ class Form {
                 }
                 $stmt->bind_param($datatypes, ...$values);
                 $stmt->execute();
+                $stmt->close();
             } else {
                 throw new Exception("sql_table is not set on the form");
             }

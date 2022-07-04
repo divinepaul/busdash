@@ -40,6 +40,7 @@ $select_input->selectOptions = $select_values;
 $form = new Form($name_input,$email_input,$pass_input,$select_input);
 $form->sql_table = "users";
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if($form->validate()) {
         $form->save();
